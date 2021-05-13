@@ -30,7 +30,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/loadimpact/k6/js/modules"
+	"go.k6.io/k6/js/modules"
 )
 
 // Register the extensions on module initialization.
