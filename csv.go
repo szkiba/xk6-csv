@@ -23,7 +23,6 @@
 package csv
 
 import (
-	"context"
 	"encoding/csv"
 	"errors"
 	"fmt"
@@ -46,7 +45,7 @@ func New() *Module {
 
 var ErrInvalidSeparator = errors.New("invalid separator")
 
-func (m *Module) Parse(ctx context.Context, text string, separator []byte) (interface{}, error) {
+func (m *Module) Parse(text string, separator []byte) (interface{}, error) {
 	if len(separator) > 1 {
 		return nil, fmt.Errorf("%w: %s", ErrInvalidSeparator, separator)
 	}
