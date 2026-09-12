@@ -12,7 +12,9 @@
  * ```JavaScript
  * import { parse } from "k6/x/csv";
  * ```
+ * @module faker
  */
+export as namespace csv;
 
 /**
  * The parse() method parses a CSV string, constructing the JavaScript array objects described by the string.

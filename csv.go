@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+// Package csv is a xk6-csv extension module.
 package csv
 
 import (
@@ -34,18 +35,15 @@ import (
 
 // Register the extensions on module initialization.
 func init() {
-	modules.Register("k6/x/csv", New())
+	modules.Register("k6/x/csv", &module{})
 }
 
-type Module struct{}
+type module struct{}
 
-func New() *Module {
-	return &Module{}
-}
-
+// ErrInvalidSeparator indicates if more than one separator parameter was passed.
 var ErrInvalidSeparator = errors.New("invalid separator")
 
-func (m *Module) Parse(text string, separator []byte) (interface{}, error) {
+func (m *module) Parse(text string, separator []byte) (interface{}, error) {
 	if len(separator) > 1 {
 		return nil, fmt.Errorf("%w: %s", ErrInvalidSeparator, separator)
 	}

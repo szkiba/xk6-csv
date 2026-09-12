@@ -1,8 +1,14 @@
 {
   "name": "xk6-csv",
+  "version": "0.1.0",
+  "repository": "github:szkiba/xk6-csv",
   "license": "MIT",
   "devDependencies": {
-    "typedoc": "^0.20.36",
-    "typedoc-plugin-markdown": "^3.8.0"
-  }
+    "@types/k6": "^0.55.2",
+    "k6": "^0.0.0"
+  },
+  "files": [
+    "index.d.ts"
+  ],
+  "types": "index.d.ts"
 }
